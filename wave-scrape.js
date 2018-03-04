@@ -3,12 +3,11 @@
 // The Errors/Alerts should display at the top-right corner
 
 jQuery(document).ready(function($){
-	var listItem = '';
-
 	$("#output").remove();
 	$("body").prepend("<div id='output'></div>");
 
 	function group(listType){
+		var listItem = '';
 		$("#output").append("<div id='"+ listType +"'><h2>" + listType + "s</h2></div>");
 		$("ul#group_list_" + listType).find('li.icon_type').each(function() {
 			listItem = $(this).text();
@@ -18,6 +17,9 @@ jQuery(document).ready(function($){
 
 	group("error");
 	group("alert");
+	group("feature");
+	group("structure");
+	group("html5");
 
 	$('#output').css({
 		"background": "#000",
